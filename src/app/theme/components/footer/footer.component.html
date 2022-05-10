@@ -1,0 +1,29 @@
+<div class="footer-container d-flex direction-column align-items-center text-white">
+    <div class="d-flex mapsite-layout">
+        <div class="d-flex direction-column w-80">
+            <div class="shortcuts-container d-flex">
+                <div class="section-title fs-13 fw-bold" *ngFor="let section of pages"> 
+                    <div class="page-title d-flex fw-semi">
+                        <span>{{ section.name }}</span>
+                        <div *ngIf="section.name" class="square" (click)="seeChildren(section)" [innerHtml]="section.symbol"></div>
+                    </div>
+                    <ng-container *ngIf="section.showChildren">
+                        <div class="animated-medium fadeInDown section-children d-flex direction-column fs-14 fw-light"
+                            *ngFor="let child of section.children">
+                            <a (click)="navigate(child)">{{ child.name }}</a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <div class="social-layout d-flex direction-column align-items-center">
+            <a class="social-item fw-bold" href="https://www.facebook.com/BWLTECHGROUP" target="_blank">FACEBOOK</a>
+            <a class="social-item fw-bold" href="https://www.linkedin.com/company/bwl-tech-group" target="_blank">LINKEDIN</a>
+            <a class="social-item fw-bold" href="https://www.instagram.com/" target="_blank">INSTAGRAM</a>
+        </div>
+    </div>
+    <div class="d-flex private-policy w-100">
+        <div class="w-80 helper-block"></div>
+        <div class="copyright-container fw-light fs-13 w-20" [routerLink]="['/privacy-policy']">POLÍTICA DE PRIVACIDAD</div>
+    </div>
+</div>

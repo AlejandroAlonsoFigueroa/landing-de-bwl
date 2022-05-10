@@ -1,0 +1,10 @@
+@import "themes/light";
+@import "themes/dark";
+/*
+*   Template for basic implementation, please add your custom scheme down here.
+*/
+
+$themes: (
+    light: $light,
+    dark: $dark
+)

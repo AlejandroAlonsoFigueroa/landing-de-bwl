@@ -1,0 +1,41 @@
+$base_color       : #ffffff;
+$primary_color    : #005CFF;
+$secondary_color  : #0A0A4F;
+$tint_color       : #003192;
+$font_color       : #2D2D2D;
+$red_color        : #ed2020;
+$border_color     : #bbbbbb;
+$border_alt       : #f3f6f6;
+$icons_color      : #929292;
+$layout_bg        : #f9f9f9;
+
+$primary_red      : #CE004F;
+$secondary_red    : #CE004F80;
+$primary_yellow   : #F6A72D;
+$secondary_yellow : #F6A72D80;
+$primary_blue     : #004EE8;
+$gray_primary     : #777777;
+$alternate_text   : #646464;
+
+
+$light :  (
+  primaryColor: $primary_color,
+  backgroundLayout: $layout_bg,
+  background: $base_color,
+  borderFocus: $tint_color,
+  border: $border_color,
+  borderSidebar: $border_alt,
+  regularText: $font_color,
+  button: $primary_color,
+  highlight: $tint_color,
+  danger: $red_color,
+  iconColor: $icons_color,
+  dashboardBanner: $secondary_color,
+  dashboardBannerText: white,
+
+  yellowPencil: $primary_yellow,
+  redPencil: $primary_red,
+  bluePencil: $primary-blue,
+  grayPencil: $gray_primary,
+  alternateText: $alternate_text,
+)

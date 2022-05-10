@@ -1,0 +1,72 @@
+<nav class="header d-flex direction-column" [ngClass]="[headerClass]" (clickOutside)="hideMenu()">
+    <div class="header-container d-flex align-items-center">
+        <div class="brand-logo-container">
+            <a (click)="navigate({source: '/pages/home'})"> <img [src]="brandLogo" alt="" /></a>
+        </div>
+        <div class="pages-section-container d-flex">
+            <div *ngIf="!showBurguerButton" class="name-page-section d-flex">
+                <ul class="d-flex align-items-center">
+                  <ng-container *ngFor="let page of pages; last as isLast">
+                      <li [ngClass]="{'active' : page.active && !page.scrollElement}" (click) = "navigate(page, $event, null, null, page.scrollElement)" (mouseenter)="navigate(page, $event, false, true)" >
+                          <a>{{ page.name }}</a>
+                          <i *ngIf="isLast" class="contact-icon bwl-i bwl-e900"></i>
+                          <!-- Here goes your new container -->
+                           <div *ngIf="page.showMenu" class="submenu-main-wrapper animated-fast fadeInSmallDown" (mouseleave)="hideMenuAlt()">
+                                <div class="arrow-down"></div>
+                                <div class="d-flex submenu-container">
+                                    <div class="submenu-poster">
+                                        <div class="text fw-extra">Todos nuestros <br> servicios</div>
+                                        <div class="linear-background"></div>
+                                        <img src="./assets/img/menu.jpg"/>
+                                    </div>
+                                    <div class="submenu-children">
+                                        <div class="children-item" *ngFor="let subPage of page.children" (click)="navigate(subPage, $event, true)" >
+                                            <div class="children-content">
+                                                <i class="children-icon bwl-i bwl-e904"></i>
+                                                <div class="children-info">
+                                                    <div class="children-title fw-bold">{{ subPage.name }}</div>
+                                                    <div class="children-description fw-medium">{{ subPage.description }}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                    </li>
+                  </ng-container>  
+                </ul>
+            </div>
+        </div>
+        <ng-container *ngIf="showBurguerButton">
+          <div class="menu-btn" [ngClass]="{'open': showMobileMenu}" (click)="displayMobileMenu()">
+              <div class="menu-btn-burger"></div>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="showMobileMenu" class="animated-medium fadeIn mobile-menu-container">
+      <ul class="mobile-menu">
+          <li *ngFor="let page of pages; last as isLast" (click)="page.children.length > 0 ? showSubmenu(page) : navigate(page, $event, null, null, page.scrollElement)">
+              <div class="d-flex align-items-center w-100">
+                  <a [ngClass]="{'active' : page.active && !page.scrollElement}">{{ page.name }}</a>
+                  <i *ngIf="(page.children.length > 0)" [ngClass]="{'rotate': page.showMenu, 'arrow': true}" class="bwl-i bwl-e902"></i>
+                  <i *ngIf="isLast" (click)="navigate(page, $event, null, null, page.scrollElement)" class="contact-icon bwl-i bwl-e900"></i>
+              </div>
+              <div *ngIf="page.showMenu" class="w-100 mobile-submenu-container animated-fast fadeInSmallDown">
+                  <!-- <div class="d-flex submenu-container"> -->
+                      <!-- <div class="submenu-children"> -->
+                          <div class="children-item" *ngFor="let subPage of page.children" (click)="navigate(subPage, $event, true)" >
+                              <div class="children-content">
+                                  <!-- <i class="children-icon bwl-i bwl-e904"></i> -->
+                                  <div class="children-info">
+                                      <div class="children-title fw-bold">{{ subPage.name }}</div>
+                                      <!-- <div class="children-description fw-medium">{{ subPage.description }}</div> -->
+                                  </div>
+                              </div>
+                          </div>
+                      <!-- </div>
+                  </div> -->
+              </div>
+          </li>
+      </ul>
+    </div>
+  </nav>

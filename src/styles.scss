@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material";
+@import "app/theme/styles/iconsTheme";
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "./app/theme/styles/styles.scss";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-family: sans-serif; */
+  background-color: #F3F3F3;
+}
+
+.ag-theme-material .ag-header {
+  border-bottom: 4px solid #eeeef4 !important;
+}
+
+.ag-theme-material .ag-row {
+  border-style: unset !important;
+  border-color: unset !important;
+  border-width: unset !important;
+  border-bottom: 2px solid #eeeef4 !important;
+}
+
+.ag-header-cell-label .ag-header-cell-text {
+  color: #001d53;
+}

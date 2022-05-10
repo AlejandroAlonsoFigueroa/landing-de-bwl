@@ -1,0 +1,217 @@
+@import "../../styles/styles.scss";
+
+@include themify() {
+  .footer-container {
+    position: relative;
+    width: 100%;
+    //height: 388px;
+    padding-bottom: 77px;
+    background: themed(regularText);
+    // z-index: -1;
+    z-index: 0;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: themed(dashboardBannerText);  
+    }
+
+    a:hover {
+      font-weight: $medium;
+    }
+
+    .mapsite-layout {
+      width: 100%;
+      height: 100%;
+      padding-left: 15%;
+      padding-right: 15%;
+      padding-top: 62px;
+
+      .shortcuts-container {
+        width: 100%;
+        user-select: none;
+
+        .section-title {
+          flex: 1;
+          text-transform: uppercase;
+          color: themed(dashboardBannerText);
+          padding-right: 20px;
+
+          .page-title {
+            height: 39px;
+            font-size: 14px;
+            letter-spacing: 2.1px;
+            line-height: 17px;
+
+            .square {
+              display: none;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid themed(dashboardBannerText);
+              height: 16px;
+              width: 16px;
+              padding-left: 2px;
+              cursor: pointer;
+            }
+          }
+
+          .section-children {
+            text-transform: none;
+            line-height: 15px;
+            padding: 5px 0px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .social-layout {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      width: 20%;
+
+      .social-item {
+        height: 17px;
+        width: 100px;
+        text-align: right;
+        margin-bottom: 29px;
+        cursor: pointer;
+        color: themed(yellowPencil);
+      }
+    }
+
+    .private-policy {
+      width: 100%;
+      padding-left: 15%;
+      padding-right: 15%;
+
+      .copyright-container {
+        font-weight: 500;
+        font-size: 14px;
+        text-align: right;
+        color: themed(alternateText);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .footer-container {
+      padding-bottom: 37px;
+
+      .mapsite-layout {
+        padding-right: 10%;
+        padding-left: 10%;
+        .d-flex {
+          width: 70%;
+
+          .shortcuts-container {
+            flex-direction: column;
+            width: 80%;
+
+            .section-title {
+              
+              .page-title {
+                font-size: 14px;
+                height: 29px;
+                justify-content: space-between;
+              
+                .square {
+                  display: flex;
+                }
+              }
+
+              .section-children {
+                font-size: 13px;
+              }
+            }
+
+            .section-title:not(:first-child) {
+              margin-top: 1rem;
+            }
+          }
+        }
+
+        .social-layout {
+          width: 30%;
+
+          .social-item {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .private-policy {
+        padding-left: 10%;
+        padding-right: 10%;
+
+        .helper-block {
+          display: none;
+        }
+        .copyright-container {
+          width: 100%;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .footer-container {
+      padding-bottom: 17px;
+
+      .mapsite-layout {
+        flex-direction: column;
+        
+        .d-flex {
+          width: 100%;
+
+          .shortcuts-container {
+
+            .section-title {
+              
+              .page-title {
+                font-size: 13px;
+                height: 19px;
+              }
+
+              .section-children {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+
+        .social-layout {
+          width: 100%;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+
+          .social-item {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .private-policy {
+        .copyright-container {
+          width: 100%;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

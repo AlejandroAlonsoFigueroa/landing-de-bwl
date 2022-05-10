@@ -1,0 +1,29 @@
+<div class="main-carousel-jumbotron">
+    <div class="linear-background"></div>
+    <!--    This DIV contains animated images and videos-->
+    <div [ngStyle]="{'background-image': 'url(' + background + ')' }" class="carousel-animated-media"></div>
+    <div *ngIf="incomeSlide && incomeSlide.type == 'image'"
+        [ngStyle]="{'background-image': 'url(' + incomeSlide?.source + ')' }"
+        class="carousel-animated-media-2 animated-medium {{sliderAnimation}}"></div>
+
+    <!--
+            <video *ngIf = "type == 'video' && showVideo" class="carousel-animated-media"  autoplay muted loop preload="auto">
+              <source [src]="background + '#t=2'">
+            </video>
+            <video *ngIf="incomeSlide && incomeSlide.type == 'video'" class="carousel-animated-media-2 animated-medium {{sliderAnimation}}" autoplay muted loop>
+              <source [src]="incomeSlide?.source">
+            </video> -->
+
+    <div class="carousel-titles">
+        <div class="main-titles-container">
+            <div class="slide-title fw-bold" [innerHTML]="activeText"></div>
+            <div class="main-slides-selector-container shadow">
+                <div class="circle-border" *ngFor="let item of slides; let index = index" (click)="setActiveSlide(index)"
+                [ngClass]="{ active: !incomeSlide && item.active || incomeSlide?.source == item.source}">
+                    <div class="slide-selector-button"></div>
+                </div>
+            </div>
+            <img *ngIf="activeImage" class="slide-logo animated fadeInRight" [src]="activeImage" alt="">
+        </div>
+    </div>
+</div>

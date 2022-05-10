@@ -1,0 +1,109 @@
+<div class="about-main-container">
+    <div [style.height.px]="mainHeroHeight" class="hero-main-container">
+        <div class="background-image">
+            <img src="./assets/img/slider/main-2.jpg"/>
+        </div>
+        <div class="d-flex direction-column justify-content-end foreground-container">
+            <div class="h-60 d-flex direction-column align-items-center justify-content-center foreground-content">
+                <div class="fs-subtitle subtitle">La<span> calidad de nuestro trabajo </span> se refleja <br> en la continuidad <span>con nuestros clientes.</span></div>
+                <div class="fs-text description">Somos una empresa con más de 8 años de experiencia en desarrollo de soluciones en software. Nos esforzamos cada día con el objetivo de mejorar y superarnos profesionalmente, con el mejor equipo de programadores y diseñadores en cada proyecto, creando soluciones que mejoren los resultados de nuestros clientes y hagan crecer su empresa.</div>
+                <div class="d-flex social-networks">
+                    <a class="social-item" href="https://www.facebook.com/BWLTECHGROUP" target="_blank"><i class="bwl-i bwl-e90d"></i></a>
+                    <a class="social-item" href="https://twitter.com/?lang=es" target="_blank"><i class="bwl-i bwl-e90e"></i></a>
+                    <a class="social-item" href="https://www.instagram.com/" target="_blank"><i class="bwl-i bwl-e90f"></i></a>
+                    <a class="social-item" href="https://www.linkedin.com/company/bwl-tech-group" target="_blank"><i class="bwl-i bwl-e910"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="wayWork" class="work-steps-container">
+        <div class="background-decoration"></div>
+        <div class="fs-subtitle w-100 d-flex justify-content-center work-steps-title"><span>¿</span>Cómo <span class="padding-left-10">trabajamos?</span></div>
+        <div *ngFor="let item of workSteps" [ngClass]="{'reverse': item.reverse}" class="d-flex align-items-center work-step-content">
+            <div class="horizontal-line {{item.color}}"></div>
+            <div class="vertical-line {{item.color}}"></div>
+            <div class="w-40 padding-left-60 work-step-image-container" [ngClass]="{'padding-right-60': item.reverse}">
+                <div class="work-step-image {{item.color}}">
+                    <div class="fs-title text">{{item.imageText}}</div>
+                    
+                    <img [src]="item.image" class="img-style"/>
+                </div>
+            </div>
+            <div class="w-55 work-step-info">
+                <div class="w-50 fs-subtitle subtitle" [innerHtml]="item.title"></div>
+                <div class="fs-text description">{{item.description}}</div>
+            </div>
+        </div>
+    </div>
+    <div id="clients" class="d-flex align-items-center justify-content-center client-group-container">
+        <div class="background-decoration"></div>
+        <div class="client-group-title fs-subtitle">La calidad de nuestro trabajo <span class="highlighted">se refleja<br> en la continuidad</span> de nuestros clientes</div>
+        <div class="client-group-content">
+            <div *ngFor="let item of clientGroup" class="client-item d-flex align-items-center justify-content-center">
+                <img class = "client-logo"[src]="item.image"/>
+            </div>
+        </div>
+    </div>
+    <div id="events" class="carousel-main-container">
+        <div class="section-separator">
+            <div class="fs-kicker section-kicker">Eventos</div>
+            <div class="fs-subtitle section-subtitle">
+                 
+                Nuevas experiencias,  <span>nuevos <br> </span>Horizontes
+            </div>
+        </div>
+        <div class="carousel-container" #mainContainer>
+            <div *ngIf="showPrev" class="carousel-btn prev" (click)="scrollCarouselLess(versionsCarousel, mainContainer)">
+                <i class="bwl-i bwl-e902"></i>
+            </div>
+            <div *ngIf="showNext" class="carousel-btn next" (click)="scrollCarouselMore(versionsCarousel, mainContainer)">
+                <i class="bwl-i bwl-e902"></i>
+            </div>
+            <div class="carousel-items d-flex" #versionsCarousel>
+                <div class="blank-space"></div>
+                <div *ngFor="let item of eventList" [ngClass]="{'current': currentEvent == item.position}" class="event-wrapper d-flex w-76">
+                    <div class="image-container">
+                        <img [src]="item.image">
+                        <div class="fs-title text">{{item.name}}</div>
+                    </div>
+                </div>
+                <div class="blank-space"></div>
+            </div>
+            <div class="fs-text event-description animated fadeIn">{{eventList[currentEvent - 1].description}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="fs-kicker row-kicker">Equipo</div>
+           
+        <div class="fs-title row-title"><span>"Para llegar</span>  lejos… <br> necesitas a <span>los mejores "</span></div>
+    </div>
+    <div class="bwl-team-container">
+        <div class="d-flex align-items-center item-container" *ngFor="let item of bwlTeam">
+            <div class="d-flex member-container">
+                <div class="member-image">
+                    <img [src]="item.image" class="image-style"/>
+                </div>
+                <div class="member-info">
+                    <div class="fs-text member-name">{{item.name}}</div>
+                    <div class="fs-text member-job">{{item.job}}</div>
+                    <div class="fs-text member-description">{{item.description}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bwl-location-container d-flex">
+        <div class="background-decoration"></div>
+        <div class="location-info-container d-flex direction-column w-50">
+            <div class="fs-kicker kicker">Ubicación</div>
+            <div class="fs-subtitle city-label">Veracruz, <br><span>Boca del río</span></div>
+            <div class="fs-text zone-description">Barco Viejo 4750, Playa de Oro Mocambo, 94298</div>
+            <bwl-basic-button (click)="openLocation()" [size]="'medium'" [bgColor]="'blue'" [icon]="'bwl-i bwl-e900'">Ir a la ubicación</bwl-basic-button>
+            <div class="logo-container">
+                <img src="./assets/img/svg/black_logo.svg"/>
+            </div>
+        </div>
+        <div class="location-image-container w-50">
+            <img src="./assets/img/veracruz-panoramica.jpg" />
+        </div>
+    </div>
+</div>

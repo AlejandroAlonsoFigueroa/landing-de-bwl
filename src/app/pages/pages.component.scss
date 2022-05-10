@@ -1,0 +1,21 @@
+@import "../theme/styles/styles";
+
+@include themify(){
+
+  .main-page-layout {
+
+    padding: 70px 0 0 50px;
+    transition: padding .15s, background-color 0.2s;
+    background-color: themed('backgroundLayout');
+    height: 100vh;
+  }
+  .collapse { padding: 70px 0 0 200px; }
+  .container {
+    position: relative;
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+}

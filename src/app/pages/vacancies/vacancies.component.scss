@@ -1,0 +1,270 @@
+@import '../../theme/styles/styles.scss';
+
+
+
+@include themify() {
+    ::placeholder{
+        color: white;
+    }
+p{
+    text-align: left;
+    font: normal normal normal 13px/19px Metropolis;
+    letter-spacing: 0px;
+    color: #313131;
+    opacity: 1;
+}
+
+input[type = "file"]{
+    display: none;
+}
+
+#label-for-file{
+    background-color: #005CFF;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.vacancies-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .elements-container{
+        width: 85%;
+        .section-1{
+            width: 100%;
+            .vacancie-description-container{
+             
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                .text-section{
+                    width: 454px;
+                    
+                    .blue-text{
+                        text-align: left;
+                        font: normal normal bold 14px/17px Metropolis;
+                        letter-spacing: 1.68px;
+                        color: #004EE8;
+                        text-transform: uppercase;
+                        opacity: 1;
+                    }
+                    .vacancie-name{
+                        text-align: left;
+                        font: normal normal bold 25px/30px Metropolis;
+                        letter-spacing: 2.5px;
+                        color: #2D2D2D;
+                        text-transform: uppercase;
+
+                        span{
+                            text-align: left;
+                            font: normal normal bold 25px/30px Metropolis;
+                            letter-spacing: 2.5px;
+                            color: #F6A72D;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+                .image-computer-section{
+                    width: 652px;
+                    height: 240px;
+                  
+                    background-color: black;
+                    color: white;
+
+                }
+
+            }
+            .job-information{
+               
+                
+                width: 80%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                .job-element{
+                    width: 190px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    .job-information-icon{
+                      margin-right: 15px;
+                    }
+                    .text-job-information{
+                        width: fit-content;
+                        .black-letters{
+                            padding: 0;
+                            margin: 0;
+                            text-align: left;
+                            font: normal normal bold 14px/17px Metropolis;
+                            letter-spacing: 0px;
+                            color: #2D2D2D;
+                            opacity: 1;
+
+
+                        }
+                        .normal-letters{
+                            padding: 0;
+                            margin: 0;
+
+                        }
+                    }
+
+                }
+
+            }
+    
+        }
+        
+        .section-2{
+            width: 100%;
+            
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+            .job-requirements{
+                width: 429px;
+                height: 100%;
+               
+                .knowledge{
+                    margin-bottom: 30px;
+                    .jobs-text{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .red-arrow{
+                        width: 10px;
+                        height: 10px;
+                    }
+                    .job-requirements-main-text{
+                        margin: 0;
+                        padding: 0;
+                        font: normal normal bold 14px/17px Metropolis;
+                        letter-spacing: 0px;
+                        color: #2D2D2D;
+                        opacity: 1;
+                    }
+                    .arrow-description-container{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                    }
+                    .red-arrow{
+                        width: 10px;
+                        height: 10px;
+                    }
+
+                }
+                .requisites{
+                    margin-bottom: 30px;
+                    .jobs-text{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .job-requirements-main-text{
+                        margin: 0;
+                        padding: 0;
+                        font: normal normal bold 14px/17px Metropolis;
+                        letter-spacing: 0px;
+                        color: #2D2D2D;
+                        opacity: 1;
+                    }
+                    .arrow-description-container{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                    }
+                    .red-arrow{
+                        width: 10px;
+                        height: 10px;
+                    }
+
+                }
+
+                .we-offer{
+                    margin-bottom: 30px;
+                    .jobs-text{
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .job-requirements-main-text{
+                        margin: 0;
+                        padding: 0;
+                        font: normal normal bold 14px/17px Metropolis;
+                        letter-spacing: 0px;
+                        color: #2D2D2D;
+                        opacity: 1;
+                    }
+                    .arrow-description-container{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                    }
+                    .red-arrow{
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+            }
+
+            .blue-box-container{
+                width: 50%;
+                
+                .my-blue-box{
+                    width: 357px;
+                    height: 368px;
+                    
+                    border-radius: 20px;
+                    background-color: #005CFF;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    padding: 30px;
+                    align-items: center;
+
+                    div input{
+                        border:none; outline:0; 
+                        background-color:#005CFF;
+                        width: 100%;
+                        
+                        border-bottom: solid black 1px;
+                    }
+                    div textarea{
+                        border:none; outline:0; 
+                        background-color: #005CFF;
+                        width: 100%;
+                        color: white;
+                        border-bottom: solid black 1px;
+                    }
+
+                    div div{
+                        color: white;
+                    }
+                }
+
+
+                .bottom-button-container{
+                    margin-top: 40px;
+                    width: 357px;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+    
+
+}
+
+
+
+
+
+}

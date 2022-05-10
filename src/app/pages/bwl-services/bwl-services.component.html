@@ -1,0 +1,50 @@
+<div class="service-main-container">
+    <div class="d-flex hero-main-container">
+        <div class="background-decoration"></div>
+        <div class="w-50 hero-image-container">
+            <img [src]="allServices[posicionEnArreglo].serviceImage" />
+        </div>
+        <div class="w-50 hero-description-container">
+            <div class="d-flex breadcrumb-container">
+                <div class="fs-kicker breadcrumb-item">Servicios</div>
+                <i class="bwl-i bwl-e902"></i>
+                <div class="fs-kicker breadcrumb-item">{{allServices[posicionEnArreglo].serviceName}}</div>
+            </div>
+            <div class="fs-subtitle service-subtitle" [innerHtml]="allServices[posicionEnArreglo].serviceTitle"></div>
+            <div class="fs-text service-description">{{allServices[posicionEnArreglo].serviceDescription}}</div>
+            <bwl-basic-button [size]="'big'" [bgColor]="'blue'" [icon]="'bwl-i bwl-e900'" (click)="navigate()">Realizamos tu proyecto</bwl-basic-button>
+        </div>
+    </div>
+    <div class="carousel-main-container">
+        <div class="fs-subtitle carousel-label" [innerHtml]="carouselLabel"></div>
+        <div class="d-flex carousel-subcontainer">
+            <div class="w-15 carousel-indicator d-flex direction-column">
+                <div *ngFor="let item of allServices[posicionEnArreglo].elementosCarrusel" [ngClass]="{'active': item.index == currentCarouselIndex}" class="position-indicator {{item.color}}" (click)="setCarouselIndex(null, item.index)">
+                   <div class="interior-circle"></div> 
+                </div>
+            </div>
+            <div class="w-85 d-flex direction-column animated-medium">
+                <div class="w-100 carousel-item" *ngFor="let item of allServices[posicionEnArreglo].elementosCarrusel">
+                    <div *ngIf="item.index == currentCarouselIndex" [ngClass]="[mainAnimation, 'animated-slows']" class="w-40 carousel-info">
+                        <div class="fs-subtitle item-name">{{item.name}}</div>
+                        <div class="fs-text item-description">{{item.description}}</div>
+                    </div>
+                    <div *ngIf="item.index == currentCarouselIndex" [ngClass]="['animated-slows', 'fadeIn', item.position]" class="d-flex w-60 carousel-image">
+                        <img [src]="item.image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex direction-column align-items-center justify-content-center row-main-container">
+        <div class="fs-subtitle row-title">Inicia <span>tu proyecto<br> con</span> nosotros</div>
+        <div class="fs-text row-description">
+            Desarrollamos soluciones
+           a la medida basados en las necesidades de nuestros clientes. Construimos 
+            y desplegamos las mejores aplicaciones para dar valor a los servicios y productos
+            que ofrecen nuestros clientes, a sus clientes.
+            Nuestro sello de garantía es la continuidad de nuestro trabajo, contigo.
+        </div>
+        <bwl-basic-button [size]="'big'" [bgColor]="'blue'" [icon]="'bwl-i bwl-e900'" (click)="navigate()">Realizamos tu proyecto</bwl-basic-button>
+    </div>
+</div>

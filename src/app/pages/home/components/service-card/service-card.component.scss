@@ -1,0 +1,74 @@
+@import "../../../../theme/styles/styles";
+
+@include themify() {
+    .service-card-main-container {
+        border-radius: 17px;
+        height: 310px;
+        width: 290px;
+        padding: 47px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .linear-background {
+            position: absolute;
+            background-image: linear-gradient(180deg, rgba(themed(primaryColor), 0.5), #00000000);
+            top: 0px;
+            left: 0px;
+            display: block;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .image-style {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 17px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .title {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            font-weight: $extra;
+            color: themed(background);
+            user-select: none;
+        }
+        
+        bwl-basic-button {
+            z-index: 1;
+            
+        }
+    }
+
+    .service-card-main-container:hover {
+        .image-style {
+            transform: scale(1.1);
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .service-card-main-container {
+            border-radius: 12px;
+            height: 260px;
+            width: 240px;
+            padding: 35px;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .service-card-main-container {
+            height: 200px;
+            width: 180px;
+        }
+    }
+}

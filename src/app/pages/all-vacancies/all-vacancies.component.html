@@ -1,0 +1,85 @@
+<div style = "height: 200px; background-color: white;" ></div>
+
+<div class = "everything-container">
+<div class = "big-photo-section">
+    <img class = "main-image"src = "../../../assets/img/business-partners-meeting-at-coffee-shop.jpg">
+</div>
+
+<div class = "main-text-section">
+    <div class = "main-text-container">
+        <p class = "main-text-title">LOREM IPSUM <span class = "red-text">DOLOR SIT ADIPISCING</span> ELIT DUOCETO VITA</p>
+        <p class = "main-text-content">
+            Lorem ipsum dolor sit amet, consectetur 
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+    </div>
+</div>
+
+<div class = "vacancies-section" *ngFor = "let vacancie of ourVacancies">
+        <div class = "vacancie-box">
+            <div class = "vacancie-text">
+                <p class = "vacancie-title">Programador Full Stack</p>
+                <p class = "vacancie-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit…</p>
+
+            </div>
+
+            <div class = "vacancie-button-container">
+                <bwl-basic-button [size]="'medium'" [bgColor]="'blue'" [icon]="'bwl-i bwl-e900'"  (click) = "navigate(vacancie.link)" >Ver</bwl-basic-button> 
+
+            </div>
+
+        </div>
+
+    
+</div>
+
+
+
+<div class = "last-section">
+    <div class = "right-container">
+        <div class = "oppened-vacancie">
+
+            <div class = "text-container">
+                <p class = "oppened-vacancie-yellow">VACANTE ABIERTA</p>
+                <p class = "question-text">¿TU VACANTE NO ESTÁ EN LA LISTA?</p>
+                <p class = "send-curriculum-text">Envíanos tu currículum y veamos que oportunidades surgen.</p>
+
+            </div>
+
+            <div class = "bottom-button-container">
+                <bwl-basic-button  [routerLink] = "['/pages/detalles-vacante', 'full-stack']" [size]="'medium'" [bgColor]="'blue'" [icon]="'bwl-i bwl-e900'">Enviar</bwl-basic-button> 
+            </div>
+
+        </div>
+
+        <div class="contact-form w-50 d-flex direction-column align-items-end">
+            <div class="input-container">
+                <input class="input-style" placeholder="Nombre" type="text"  required />
+            </div>
+            <div class="input-container">
+                <input class="input-style" placeholder="Teléfono" type="text"  required />
+            </div>
+            <div class="input-container">
+                <input class="input-style" placeholder="Correo Electrónico" type="text"  required />
+            </div>
+            <div class="input-container">
+                <textarea class="textarea-style" placeholder="Mensaje" type="text"  required></textarea>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+
+<!--<div *ngFor = "let vacancie of ourVacancies">
+    <p>{{vacancie.salary}}</p>
+</div>
+<button [routerLink] = "['/pages/detalles-vacante', 'full-stack']">Vacante 1</button>-->

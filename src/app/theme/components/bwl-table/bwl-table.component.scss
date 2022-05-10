@@ -1,0 +1,107 @@
+@import "../../styles/styles";
+
+@include themify(true) {
+  bwl-table-component {
+    /*
+    *   Table styles - TODO: Convert into global styles
+    */
+
+    .arrow-expand {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+      cursor: pointer;
+      img {
+        transition: all 0.2s ease-in ;
+      }
+    }
+
+
+
+
+    .head-table-style {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      width: 100%;
+      height: 35px;
+      display: flex;
+      color: themed("regularText");
+      font-weight: 700;
+      font-size: 14px;
+      background-color: themed("tableHeaderBg");
+
+      .head-item {
+        display: flex;
+        height: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .head-item-flex-1 {
+        flex: 1;
+      }
+    }
+
+    .body-table-style {
+      font-size: 13px;
+      height: calc(100% - 35px);
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      overflow: auto;
+      .table-row-item {
+        position: relative;
+        display: flex;
+        height: 46px;
+        transition: background-color 0.4s ease;
+        border-bottom: 1px solid rgba(themed('border'), 0.5);
+        .table-cell-item {
+          display: flex;
+          padding-left: 20px;
+          padding-right: 20px;
+          align-items: center;
+          height: 100%;
+        }
+        .table-cell-item-flex-1 {
+          flex: 1;
+        }
+      }
+      .table-row-item:hover {
+        background-color: rgba(themed('border'), 0.5);
+      }
+
+      .table-row-detail {
+        width: calc(100% - 1px);
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        top: 46px;
+        height: 100px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.1);
+        background: themed('background');
+      }
+    }
+
+    .tableDetailEntry {
+      animation-duration: 0.4s;
+      -webkit-animation-name: tableDetailEntry;
+      animation-name: tableDetailEntry;
+    }
+  }
+  @keyframes tableDetailEntry {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 100px;
+    }
+  }
+  /**
+  *   End of table styles
+  **/
+}

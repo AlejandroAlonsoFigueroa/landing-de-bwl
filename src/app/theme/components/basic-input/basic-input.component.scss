@@ -1,0 +1,75 @@
+@import '../../styles/colors.scss';
+@import "../../styles/styles";
+
+@include themify(){
+  .input-component {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+
+    & label {
+      color: themed('regularText');
+      transition: all 0.2s;
+      margin-bottom: .5rem;
+    }
+  }
+
+  .input-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    & input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 5px;
+      color: themed('regularText');
+      transition: all 0.2s;
+      border: 1px solid themed('border');
+      background: transparent;
+    }
+
+    & input:focus {
+      transition: all 0.2s;
+      border-color: themed('borderFocus');
+      outline: 0 none;
+      cursor: text;
+    }
+
+    & .eye {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 13px;
+      height: 13px;
+      border-radius: 60% 30%;
+      position: absolute;
+      transform: rotate(45deg);
+      right: 10px;
+      top: calc(50% - (13px / 2));
+      user-select: none;
+      cursor: pointer;
+    }
+
+    & .eye:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    & input.error {
+      border-color: $danger;
+    }
+  }
+
+  .eye-border, .eye-border:before {
+    border: solid 1px $border-input;
+  }
+
+  .eye-selected, .eye-selected:before {
+    border: solid 1px $focus-input;
+  }
+}

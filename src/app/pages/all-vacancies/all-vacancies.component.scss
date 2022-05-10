@@ -1,0 +1,236 @@
+@import '../../theme/styles/styles.scss';
+
+@include themify() {
+  .everything-container{
+    background-color: white;
+  }
+
+  input{
+    width: 80%;
+    background-color: #005cff;
+  }
+
+ 
+  .main-image{
+    width: 1056px;
+    height: 310px;
+    border-radius: 20px;
+  }
+
+  .big-photo-section{
+      display: flex;
+      justify-content: center;
+  }
+  .main-text-section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}   
+  .main-text-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 932px;
+      margin-top: 40px;
+      margin-bottom: 100px;
+  }
+
+  .main-text-title{
+    text-align: center;
+    font: normal normal bold 25px/30px Metropolis;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 1;
+    width: 500px;
+  }
+  .main-text-content{
+    text-align: center;
+    font: normal normal normal 13px/19px Metropolis;
+    letter-spacing: 0px;
+    color: #2D2D2D;
+    opacity: 1;
+  }
+
+  .vacancies-section{
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+
+  .vacancie-box{
+      padding: 30px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border: solid grey 1px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 840px;
+      align-items: center;
+      margin-bottom: 30px;
+      
+
+
+  }
+
+  .vacancie-title{
+    text-align: left;
+    font: normal normal bold 14px/17px Metropolis;
+    letter-spacing: 0px;
+    color: #2D2D2D;
+    text-transform: capitalize;
+    opacity: 1;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .vacancie-content{
+    text-align: left;
+    font: normal normal normal 13px/19px Metropolis;
+    letter-spacing: 0px;
+    color: #2D2D2D;
+    opacity: 1;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .last-section{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+  }
+
+  .right-container{
+      width: 85%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+
+
+    }
+
+    .oppened-vacancie{
+      width: 434px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    }
+
+    .contact-blue-box{
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #005cff;
+        border-radius: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 652px;
+        height: 423px;
+        align-items: flex-start;
+        padding: 80px;
+    
+    }
+    .oppened-vacancie-yellow{
+      font: normal normal bold 14px/17px Metropolis;
+      letter-spacing: 1.68px;
+      color: #F6A72D;
+      text-transform: uppercase;
+      opacity: 1;
+    }
+
+    .question-text{
+      text-align: left;
+      font: normal normal bold 25px/30px Metropolis;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      opacity: 1;
+
+    }
+    .send-curriculum-text{
+      text-align: left;
+      font: normal normal normal 13px/19px Metropolis;
+      letter-spacing: 0px;
+      color: #2D2D2D;
+      opacity: 1;
+      width: 250px;
+      
+    }
+
+    .contact-form {
+      justify-content: space-between;
+      height: 422px;
+      border-radius: 17px 0px 0px 17px;;
+      background-color: themed(primaryColor);
+      padding: 67px 0px 67px 0;
+
+      .input-container {
+        padding-right: 67px;
+        width: 80%;
+
+        .input-style, .textarea-style {
+          padding-bottom: 10px;
+          padding-left: 15px;
+          line-height: 27px;
+          font-size: 13px;
+          font-weight: $bold;
+          background: transparent;
+          width: 100%;
+          max-width: 100%;
+          border: none;
+          color: themed(dashboardBannerText);
+          border-bottom: 1px solid themed(dashboardBannerText);
+        }
+
+        .textarea-style {
+          resize: none;
+          outline: none;
+        }
+
+        input::placeholder, textarea::placeholder {
+          color: themed(dashboardBannerText);
+          font-size: 13px;
+          font-weight: $medium
+        }
+  
+        input:focus, textarea:focus {
+          transition: all 0.2s;
+          font-weight: $medium;
+          outline: 0 none;
+          cursor: text;
+        }
+      }
+      
+    }
+  
+    .red-text{
+      color: #ce004f;
+    }
+
+    .bottom-button-container{
+      height: 150px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    
+
+
+    @media screen and (max-width: 1036px) {
+      .right-container{
+        justify-content: flex-end;
+      }
+
+    }
+    
+
+
+}

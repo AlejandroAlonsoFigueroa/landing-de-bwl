@@ -1,0 +1,12 @@
+<div class="input-component">
+  <label [for]="for"> {{ label }} </label>
+  <div class="input-container">
+    <input [type]="type" 
+    [ngClass]="hasError ? 'error' : '' " 
+    [autocomplete]="autocomplete" 
+    [name]="name" 
+    (change)="handleChange($event)" 
+    required />
+    <div *ngIf="type === 'password' || reveal" [ngClass]="reveal ? ['eye', 'eye-selected'] : ['eye', 'eye-border']" (click)="revealPassword()"></div>
+  </div>
+</div>

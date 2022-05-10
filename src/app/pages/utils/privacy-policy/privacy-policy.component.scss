@@ -1,0 +1,278 @@
+@import '../../../theme/styles/styles.scss';
+
+@include themify() {
+    *, *:before, *:after{
+        box-sizing: inherit;
+        margin: 0 0;
+    }
+
+    /* scroll */
+    .scroll {
+        overflow:auto;
+        box-sizing: border-box;
+    }
+
+    .scroll {
+        /*Estilos estándar experimentales (Principalmente Firefox)*/
+        scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+        scrollbar-width: thin;
+    }
+
+    /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+    .scroll::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    .scroll::-webkit-scrollbar:vertical {
+        width:6px;
+    }
+
+    .scroll::-webkit-scrollbar-button:increment,.scroll::-webkit-scrollbar-button {
+        display: none;
+    } 
+
+    .scroll::-webkit-scrollbar:horizontal {
+        height: 10px;
+    }
+
+    .scroll::-webkit-scrollbar-thumb {
+        background-color: #D2D1D1;
+    }
+
+    /*Términos y condiciones**/
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+    div.terms-content {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    div.terms-content {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        background-image: url(../../../../assets/img/background-login.png); 
+        background-position: center;
+        background-size: 135%;
+        background-repeat: no-repeat;
+        background-position: -310px -420px;
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: center;
+    } 
+
+    div.terms-and-conditions {
+        position: relative;
+        display: flex;
+        width: 75vw;
+        margin: 0 auto;
+        flex-direction: column;
+        height: 94.6vh;
+        justify-content: center;
+    }
+
+    div.terms-link-background {
+        position: fixed;
+        bottom: 0px;
+        background-color: themed(primaryColor);
+        height: 5.4vh;
+        width: 100vw;
+        -webkit-animation: fadein 3s ease-in; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 3s ease-in; /* Firefox < 16 */
+            -ms-animation: fadein 3s ease-in; /* Internet Explorer */
+            -o-animation: fadein 3s ease-in; /* Opera < 12.1 */
+                animation: fadein 3s ease-in;
+    }
+
+    div.terms-link {
+        position: fixed;
+        bottom: 0px;
+        height: 5.4vh;
+        width: 100vw;
+        padding-left: 116px;
+        display: flex;
+        align-items: center;
+        -webkit-animation: fadein 3s ease-in; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 3s ease-in; /* Firefox < 16 */
+            -ms-animation: fadein 3s ease-in; /* Internet Explorer */
+            -o-animation: fadein 3s ease-in; /* Opera < 12.1 */
+                animation: fadein 3s ease-in;
+    }
+
+    div.terms-link > a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.8vmin; /*1.8vmin*/
+        text-decoration: none;
+        color: themed(dashboardBannerText);
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    div.terms-container-logo {
+        display: flex;
+        height: 25%;
+        align-items: center;
+    }
+
+    div.terms-logo {
+        display: flex;
+        align-items: center;
+        height: auto;
+        // width: 100%;
+        padding-top: 20px;
+    }
+
+    div.terms-logo img {
+        max-height: 135px;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .terms-container-text {
+        display: flex;
+        align-items: center;
+        height: 75%;
+
+        .terms-container-wrapper {
+            background-color: whitesmoke;
+            height: auto;
+            border-radius: 12px;
+            width: 100%;
+            box-shadow: 0 2px 5px #0000000A;
+        }
+    }
+
+    div.terms-container-text > div > div:nth-child(1){
+        height: 7vmin;
+        margin: 5vmin 0;
+    }
+
+    div.terms-container-text > div > div:nth-child(2){
+        height: 43vmin;
+        /* box-sizing: content-box; */
+        margin-bottom: 2vmin;
+    }
+
+    h1.title-terms{
+        display: flex;
+        font-size: 3.0vmin;
+        border-top: 1px solid #393939;
+        border-bottom: 1px solid #393939;
+        align-items: center;
+        color: #393939;
+        padding: 20px 0;
+    }
+
+    div.main-content {
+        /* margin: 35px 0; */
+        padding: 0px 35px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    h3.paragraph-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 17px;
+        color: #393939;
+        font-weight: bold;
+    }
+
+    h3.paragraph-title.subsection {
+        font-size: 14px;
+    }
+
+    p.paragraph {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        color: #393939;
+        text-align: justify;
+        padding: 5px 0;
+        margin: 0;
+    }
+
+    div.small-content{
+        padding: 10px 0;
+    }
+
+    div.small-content > ul > li {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        color: #393939;
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    */
+  
+    @media (max-width: 767px) {
+        section {
+            background-position: 62vw top;
+        }
+
+        div.terms-logo img{
+            height: auto;
+            max-width: 90px;
+            background-size: contain;
+        } 
+
+    }
+  
+    /* 
+        ##Device = Most of the Smartphones Mobiles (Portrait)
+    */
+    
+    @media (max-width: 480px) {
+
+        a.newLink{
+            font-size: 13px !important;
+        }
+
+        div.terms-link > a {
+            font-size: 11px;
+        }
+
+        p.paragraph{
+            font-size: 11px;
+        }
+
+        div.small-content > ul > li {
+            font-size: 11px;
+        }
+
+        div.cerve-left-side, div.terms-link{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        div.logo div.img  {
+            height: 100%;
+            width: 100%;
+        }
+
+        h3.paragraph-title {
+            font-size: 13px;
+        }
+
+        h3.paragraph-title.subsection {
+            font-size: 12px;
+        }
+
+        div.main-content{
+            /* margin: 35px 0; */
+            padding: 0px 20px;
+        }
+    }
+
+    @media(max-width: 380px) {
+        div.terms-container-text > div > div:nth-child(2) {
+            height: 80vmin;
+        }
+    }
+}

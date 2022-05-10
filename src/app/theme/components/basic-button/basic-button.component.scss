@@ -1,0 +1,59 @@
+@import '../../styles/colors.scss';
+@import '../../styles/styles';
+
+@include themify() {
+
+  button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 13px;
+    font-weight: $medium;
+    padding: 15px 18px;
+    height: 100%;
+    width: 100%;
+    background-color: themed(primaryColor);
+    border: none;
+    cursor: pointer;
+    border-radius: 17px;
+    color: themed(background);
+    transition: all 0.3s ease-in-out;
+
+    .bwl-i {
+      position: absolute;
+      right: 15px;
+    }
+
+    &.blue {
+      background-color: themed(blueText);
+    }
+
+    &.blue:hover {
+      background-color: themed(yellowPencil);
+    }
+
+    &.small {
+      height: 30px;
+      width: 126px;
+    }
+
+    &.medium {
+      height: 41px;
+      width: 169px;
+    }
+
+    &.big {
+      height: 41px;
+      width: 221px;
+    }
+  }
+
+  button:focus {
+    outline: 0;
+  }
+
+  button:active {
+    transform: scale(0.9);
+  }
+  
+}
