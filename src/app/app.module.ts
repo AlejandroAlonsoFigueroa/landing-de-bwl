@@ -13,6 +13,8 @@ import { GeneralServiceComponent } from './pages/services/general-service/genera
 import { BwlServicesProvider } from './shared/services/bwl-services-provider';
 import { PagesComponent } from './pages/pages.component';
 import { VacanciesService } from './shared/services/vacancies-service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Generador de token para el jwt
 // export function tokenGetter() {
@@ -37,6 +39,7 @@ const misRutas : Routes= [
     BrowserModule,
     AppRoutingModule,
     PagesModule,
+    HttpClientModule, 
     // JwtModule.forRoot({
     //   config: {
     //     tokenGetter: tokenGetter,
